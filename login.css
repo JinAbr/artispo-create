@@ -8,22 +8,19 @@
 
 /* ---------------- BODY ---------------- */
 body {
-  background-color: #F8E8D0; /* same as home & signup pages */
-  overflow: hidden; /* makes page unscrollable */
-  height: 100vh;
-  position: relative;
+  font-family: "Poppins", sans-serif;
+  background-color: #f6e9d5;
+  overflow: hidden;
 }
 
 /* ---------------- HEADER ---------------- */
 header {
+  position: absolute;
+  top: 35px;
+  left: 60px;
   display: flex;
   align-items: center;
-  padding: 25px 80px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: transparent;
+  gap: 10px;
   z-index: 10;
 }
 
@@ -34,8 +31,8 @@ header {
 }
 
 .logo img {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
 }
 
 .logo h1 {
@@ -55,7 +52,8 @@ header {
   background-color: #F8E8D0;
   border: 10px solid #e86c0c;
   border-radius: 25px;
-  width: 420px;
+  height: 550px;
+  width: 500px;
   padding: 2.5rem 3rem;
   box-shadow: 8px 8px 25px rgba(0, 0, 0, 0.25);
   text-align: center;
@@ -167,6 +165,21 @@ header {
   z-index: 1;
 }
 
+.green-line {
+  position: absolute;
+  right: -60px; /* moves them to the right side */
+  top: 15%; /* adjust vertically as needed */
+  width: 312px;
+  height: 12px;
+  background-color: #2f4f2f; /* dark green shade */
+  border-radius: 10px;
+}
+
+.green-line.second {
+  top: 17.5%; /* space between the two lines */
+  width: 220px; /* slightly shorter for variation */
+}
+
 .green-block {
   position: absolute;
   bottom: 240px;
@@ -178,17 +191,6 @@ header {
   border-radius: 45px;
 }
 
-.orange-block {
-  position: absolute;
-  right: 30px;
-  bottom: 40px;
-  width: 120px;
-  height: 200px;
-  border-radius: 35px;
-  background: #e86c0c;
-  z-index: 3;
-}
-
 /* ---------------- ART IMAGES ---------------- */
 .hero-images {
   position: absolute;
@@ -197,7 +199,7 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 0 80px;
-  z-index: 1;
+  z-index: -2;
 }
 
 .hero-images img {
@@ -207,31 +209,31 @@ header {
 
 .img1 {
   position: absolute;
-  right: 375px;
-  top: -220px;
+  left: 125px;
+  top: 75px;
   width: 200px;
   height: 230px;
-    border-radius: 30px;
+  border-radius: 30px;
   object-fit: cover;
 }
 
 .img2 {
   position: absolute;
-  right: 335px;
-  top: 30px;
+  left: 80px;
+  top: 335px;
   width: 290px;
   height: 320px;
-    border-radius: 30px;
+  border-radius: 30px;
   object-fit: cover;
 }
 
 .img3 {
   position: absolute;
-  left: 315px;
-  top: -50px;
+  right: 65px;
+  top: 335px;
   width: 350px;
   height: 400px;
-    border-radius: 30px;
+  border-radius: 30px;
   object-fit: cover;
 }
 

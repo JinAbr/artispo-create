@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artispo | Log In</title>
-  <link rel="stylesheet" href="login.css">
+  <title>Artispo | Sign Up</title>
+  <link rel="stylesheet" href="signup.css">
 </head>
 <body>
 
@@ -16,33 +16,38 @@
     </div>
   </header>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN -->
   <main>
-    <!-- Background Art -->
+    <!-- Decorative Images -->
     <div class="hero-images">
       <img src="painting.jpg" class="img1" alt="Painting 1">
       <img src="forest_painting.jpg" class="img2" alt="Forest Painting">
-      <img src="flowers_black_bg.jpg" class="img3" alt="Floral Painting">
+      <img src="flowers_black_bg.jpg" class="img3" alt="Floral Art">
     </div>
 
-    <!-- Login Box -->
-    <div class="login-box">
-      <h2>Log In</h2>
+    <!-- Sign-Up Box -->
+    <div class="signup-box">
+      <h2>Sign Up</h2>
+      <form id="signupForm">
+        <input type="text" id="username" name="username" placeholder="Username" required>
 
-      <form id="loginForm">
-        <input type="text" id="username" name="username" placeholder="Username or Email Address" required>
+        <input type="email" id="email" name="email" placeholder="Email Address" required>
 
-        <div class="password-field">
-          <input type="password" id="password" name="password" placeholder="Password" required>
-          <a href="#" class="forgot">Forgot Password?</a>
+        <div class="password-container">
+          <input type="password" id="password" name="password" placeholder="Password" minlength="8" required>
+          <p><i>Password must be at least 8 characters*</i></p>
         </div>
+
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-type password" minlength="8" required>
 
         <button type="submit" class="continue">Continue</button>
 
-        <p class="signup-link">
-          Don’t have an account yet?
-          <a href="signup.html">Sign Up</a>
-        </p>
+        <div class="or">or</div>
+
+        <button type="button" class="google-btn">
+          <img src="google_logo.png" alt="Google Logo">
+          Continue with Google
+        </button>
 
         <p class="terms">
           By continuing, you agree to Artispo’s
@@ -52,32 +57,37 @@
       </form>
     </div>
 
-    <!-- Decorative Shapes -->
+    <!-- Decorative shapes -->
     <div class="circle"></div>
+    <div class="green-line"></div>
+    <div class="green-line second"></div>
     <div class="green-block"></div>
-    <div class="orange-block"></div>
     <div class="bottom-bg"></div>
   </main>
 
-  <!-- JavaScript for basic login validation -->
   <script>
-    document.getElementById("loginForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const username = document.getElementById("username").value.trim();
-      const password = document.getElementById("password").value.trim();
+    document.getElementById("signupForm").addEventListener("submit", function (e) {
+      const password = document.getElementById("password");
+      const confirmPassword = document.getElementById("confirmPassword");
 
-      if (!username || !password) {
-        alert("⚠️ Please fill in all fields.");
+      // Let built-in validation handle empty or invalid inputs
+      if (!this.checkValidity()) return;
+
+      // Check if passwords match
+      if (password.value !== confirmPassword.value) {
+        e.preventDefault();
+        alert("⚠️ Passwords do not match. Please re-type your password.");
+        confirmPassword.focus();
         return;
       }
 
-      if (password.length < 8) {
-        alert("⚠️ Password must be at least 8 characters.");
-        return;
-      }
+      alert("🎨 Account created successfully!");
+      console.log("User signed up successfully:", {
+        username: document.getElementById("username").value.trim(),
+        email: document.getElementById("email").value.trim(),
+      });
 
-      alert("🎨 Logged in successfully!");
-      document.getElementById("loginForm").reset();
+      this.reset();
     });
   </script>
 
