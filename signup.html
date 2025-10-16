@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artispo | Sign Up</title>
+  <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="artispo_logo.png" alt="Artispo Logo">
+      <h1>Artispo</h1>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <!-- Decorative Images -->
+    <div class="hero-images">
+      <img src="painting.jpg" class="img1" alt="Painting 1">
+      <img src="forest_painting.jpg" class="img2" alt="Forest Painting">
+      <img src="flowers_black_bg.jpg" class="img3" alt="Floral Art">
+    </div>
+
+    <!-- Sign-Up Box -->
+    <div class="signup-box">
+      <h2>Sign Up</h2>
+      <form id="signupForm" novalidate>
+        <input type="text" id="username" name="username" placeholder="Username" required>
+
+        <input type="email" id="email" name="email" placeholder="Email Address" required>
+
+        <div class="password-container">
+          <input type="password" id="password" name="password" placeholder="Password" minlength="8" required>
+          <p><i>Password must be at least 8 characters*</i></p>
+        </div>
+
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-type password" required>
+
+        <button type="submit" class="continue">Continue</button>
+
+        <div class="or">or</div>
+
+        <button type="button" class="google-btn">
+          <img src="google_logo.png" alt="Google Logo">
+          Continue with Google
+        </button>
+
+        <p class="terms">
+          By continuing, you agree to Artispo’s
+          <a href="#">Terms of Service</a> and
+          <a href="#">Privacy Policy</a>.
+        </p>
+      </form>
+    </div>
+
+    <!-- Decorative shapes -->
+    <div class="circle"></div>
+    <div class="green-line"></div>
+    <div class="green-line second"></div>
+    <div class="green-block"></div>
+    <div class="bottom-bg"></div>
+  </main>
+
+  <script>
+    // ===========================
+    // VALIDATION SCRIPT
+    // ===========================
+    document.getElementById("signupForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const username = document.getElementById("username").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      // Required fields check
+      if (!username || !email || !password || !confirmPassword) {
+        alert("⚠️ Please fill in all fields.");
+        return;
+      }
+
+      // Email format check (using regex)
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        alert("⚠️ Please enter a valid email address (e.g., name@example.com).");
+        return;
+      }
+
+      // Password length check
+      if (password.length < 8) {
+        alert("⚠️ Password must be at least 8 characters long.");
+        return;
+      }
+
+      // Password match check
+      if (password !== confirmPassword) {
+        alert("⚠️ Passwords do not match. Please re-type your password.");
+        return;
+      }
+
+      // Success: Log user information to the console
+      console.log("User signed up successfully:", {
+        username: username,
+        email: email
+      });  // Note: We're not logging the password for security reasons
+
+      alert("🎨 Account created successfully!");
+      document.getElementById("signupForm").reset();
+    });
+  </script>
+
+</body>
+</html>
