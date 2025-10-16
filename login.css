@@ -1,0 +1,268 @@
+/* ---------------- RESET ---------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ---------------- BODY ---------------- */
+body {
+  background-color: #F8E8D0; /* same as home & signup pages */
+  overflow: hidden; /* makes page unscrollable */
+  height: 100vh;
+  position: relative;
+}
+
+/* ---------------- HEADER ---------------- */
+header {
+  display: flex;
+  align-items: center;
+  padding: 25px 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo img {
+  width: 60px;
+  height: 60px;
+}
+
+.logo h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1B1B1B;
+}
+
+/* ---------------- LOGIN BOX ---------------- */
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #F8E8D0;
+  border: 5px solid #C84A00;
+  border-radius: 25px;
+  width: 420px;
+  padding: 2.5rem 3rem;
+  box-shadow: 8px 8px 25px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  z-index: 5;
+}
+
+.login-box h2 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #1B1B1B;
+  margin-bottom: 1.5rem;
+}
+
+/* ---------------- INPUTS ---------------- */
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 0.6rem 0;
+  border-radius: 8px;
+  border: none;
+  background: #D9D9D9;
+  font-size: 1rem;
+  outline: none;
+}
+
+/* ---------------- PASSWORD ---------------- */
+.password-field {
+  position: relative;
+}
+
+.forgot {
+  position: absolute;
+  right: 5px;
+  top: 35%;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  color: #C84A00;
+  text-decoration: none;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+/* ---------------- BUTTON ---------------- */
+.continue {
+  background-color: #C84A00;
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 0;
+  width: 100%;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.continue:hover {
+  background-color: #A53B00;
+}
+
+/* ---------------- LINKS ---------------- */
+.signup-link {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #1B1B1B;
+}
+
+.signup-link a {
+  color: #C84A00;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+.terms {
+  font-size: 0.75rem;
+  color: #555;
+  margin-top: 0.8rem;
+}
+
+.terms a {
+  color: #C84A00;
+  text-decoration: none;
+}
+
+/* ---------------- DECORATIVE ELEMENTS ---------------- */
+.bottom-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  background-color: #2C2C2C;
+  z-index: 1;
+}
+
+.circle {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: #C84A00;
+  border-radius: 50%;
+  bottom: 60px;
+  left: -40px;
+  z-index: 2;
+}
+
+.green-block {
+  position: absolute;
+  right: 40px;
+  bottom: 280px;
+  width: 220px;
+  height: 80px;
+  border-radius: 35px;
+  background: #184F2D;
+  z-index: 2;
+}
+
+.orange-block {
+  position: absolute;
+  right: 30px;
+  bottom: 40px;
+  width: 120px;
+  height: 200px;
+  border-radius: 35px;
+  background: #C84A00;
+  z-index: 3;
+}
+
+/* ---------------- ART IMAGES ---------------- */
+.hero-images {
+  position: absolute;
+  width: 100%;
+  top: 130px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 80px;
+  z-index: 1;
+}
+
+.hero-images img {
+  border-radius: 25px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.img1 {
+  width: 150px;
+}
+
+.img2 {
+  width: 180px;
+  position: relative;
+  top: 80px;
+}
+
+.img3 {
+  width: 220px;
+  position: relative;
+  top: 100px;
+}
+
+/* ---------------- RESPONSIVENESS ---------------- */
+@media (max-width: 1024px) {
+  .login-box {
+    width: 80%;
+  }
+
+  .hero-images {
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .hero-images img {
+    width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-images {
+    flex-wrap: wrap;
+    justify-content: center;
+    top: 100px;
+  }
+
+  .login-box {
+    width: 90%;
+    margin-top: 4rem;
+  }
+
+  .hero-images img {
+    width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-images {
+    display: none;
+  }
+
+  .login-box {
+    width: 90%;
+    padding: 1.8rem;
+  }
+
+  .circle, .green-block, .orange-block {
+    display: none;
+  }
+}

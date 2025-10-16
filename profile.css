@@ -1,0 +1,253 @@
+/* ---------- General Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Georgia", serif;
+}
+
+body {
+  background-color: #35363F;
+  overflow: hidden; /* Unscrollable */
+}
+
+/* ---------- Top Navigation ---------- */
+.top-nav {
+  position: relative;
+  width: 100%;
+  background-color: #f6e7d0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.8em 4em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  position: relative;
+  top: -100px;
+  left: -550px;
+  z-index: 2000;
+}
+
+.logo img {
+  width: 300px;
+  height: auto;
+  display: block;
+}
+
+.top-nav nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2em;
+  padding-top: 40px;
+}
+
+.top-nav nav ul li a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.top-nav nav ul li a.active,
+.top-nav nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Floral Search Bar ---------- */
+.floral-header {
+  width: 100%;
+  background: url("flowers-bg.png") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.floral-search {
+  display: flex;
+  align-items: center;
+  background-color: #f5e9d3;
+  border-radius: 25px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  width: 500px;
+  max-width: 90%;
+  border: 3px solid #e27b2d;
+  margin: 15px 0;
+}
+
+.floral-search .search-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.floral-search input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 16px;
+  color: #333;
+  background-color: transparent;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 60px;
+  height: 100vh;
+  background-color: #e27b2d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-top: 270px;
+  z-index: 5;
+}
+
+.sidebar .icon img {
+  width: 35px;
+  height: 35px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.sidebar .icon img:hover {
+  transform: scale(1.1);
+}
+
+/* ---------- Profile Section ---------- */
+.profile-section {
+  position: relative;
+  margin-left: 100px;
+  margin-top: 50px;
+  background-color: #35363F;
+  color: #f5e9d3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  text-align: center;
+}
+
+.profile-card .avatar {
+  width: 100px;
+  border-radius: 50%;
+  background-color: #f5e9d3;
+  padding: 5px;
+}
+
+.profile-card h2 {
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+.profile-card .edit {
+  font-size: 14px;
+  color: #f5e9d3;
+}
+
+.profile-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #f5e9d3;
+}
+
+.add-btn {
+  margin-top: 30px;
+  background-color: #e27b2d;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  background-color: #cf6c25;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background-color: #35363F;
+  color: #f5e9d3;
+  padding: 40px 80px;
+  font-family: "Poppins", sans-serif;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-section h3 {
+  color: #ff6b00;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.about .logo-area {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.footer-logo {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+.footer-section a {
+  text-decoration: none;
+  color: #f5e9d3;
+}
+
+.footer-section a:hover {
+  color: #ff6b00;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .sidebar {
+    display: none;
+  }
+  .profile-section {
+    margin-left: 0;
+  }
+}
