@@ -125,7 +125,6 @@ h1, h2, h3, p {
   margin-top: -5px;
 }
 
-
 .contact-lines {
   margin-top: 1rem;
   font-size: 1.05rem;
@@ -133,21 +132,23 @@ h1, h2, h3, p {
 }
 
 .social-block {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 1rem 3rem;
-  margin-top: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem; /* vertical gap 0.5rem, horizontal gap 1.5rem */
+  max-width: 500px; /* or any suitable max width */
+  justify-content: flex-start;
 }
 
 .social-item {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
+  width: 45%; /* Two per row */
 }
 
 .social-item img {
-  width: 35px;
-  height: 35px;
+  width: 32px;
+  height: 32px;
 }
 
 .social-item div {
@@ -169,10 +170,9 @@ h1, h2, h3, p {
   }
 }
 
-.footer-col-contact-col{
+.footer-col.contact-col{
   top: 10px;
 }
-
 
 .social-icons {
   display: flex;
@@ -181,6 +181,9 @@ h1, h2, h3, p {
   margin-top: 10px;
 }
 
+.footer-col.footer-artispo{
+  top: -95px;
+}
 .footer-icon {
   width: 30px;
   height: 30px;
@@ -278,7 +281,6 @@ h1, h2, h3, p {
   transform: scale(1.1);
   filter: brightness(105%) sepia(50%) saturate(200%) hue-rotate(-10deg);
 }
-
 
 /* =============== PHOTO DIVIDER =============== */
 .photo-divider {
