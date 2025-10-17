@@ -101,6 +101,8 @@ header {
   letter-spacing: 0;
   color: #FAEAD3;
   text-align: left;
+  margin-right: 250px;
+
 }
 
 /* ------------------ DECORATIVE IMAGES (Refined layout v2) ------------------ */
@@ -118,19 +120,19 @@ header {
 
 /* Flower bunch on top (main decorative) */
 .flower-image {
-  width: 230px;
+  width: 300px;
   height: auto;
-  top: 160px;      /* move a bit lower */
-  right: 40px;     /* slightly inward from edge */
+  top: -56px;      /* move a bit lower */
+  right: -65px;     /* slightly inward from edge */
   z-index: 10;
 }
 
 /* Top baroque painting (overlaps slightly with flowers) */
 .image-1 {
-  width: 240px;
-  height: 230px;
+  width: 210px;
+  height: 235px;
   top: 120px;   
-  right: 210px;
+  right: 200px;
   z-index: 8;
 }
 
@@ -139,19 +141,19 @@ header {
   width: 360px;
   height: 460px;
   top: 210px;
-  right: -165px;
+  right: -210px;
   z-index: 7;
   clip-path: inset(0 0 10px 0); /* crops bottom slightly */
 }
 
 /* Bottom forest painting — cropped by next divider */
 .image-2 {
-  width: 260px;
-  height: 270px;
-  top: 320px;     /* positioned closer */
+  width: 270px;
+  height: 323px;
+  bottom: 0;     /* positioned closer */
   right: 175px;
   z-index: 6;
-  clip-path: inset(0 0 50px 0); /* hides bottom nicely */
+  clip-path: inset(0 0 20px 0); /* hides bottom nicely */
 }
 .about-section {
   position: relative;
@@ -203,7 +205,7 @@ header {
 
 .divider.right-2 p,
 .divider.right-6 p,
-.vision-text p, .text-box p {
+.vision-text p{
   font-family: 'Segoe UI', sans-serif;
   font-size: 22px;
   line-height: 1.5;
