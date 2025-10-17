@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Artispo | Profile</title>
-  <link rel="stylesheet" href="profile.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Profile.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
@@ -13,20 +13,20 @@
   <header class="top-nav">
     <div class="nav-content">
       <div class="logo">
-        <img src="Artispo_logo.png" alt="Artispo Logo">
+        <img src="Artispo Logo(1).png" alt="Artispo Logo">
+
       </div>
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="explore.html">Explore</a></li>
+          <li><a href="explore.html" class="active">Explore</a></li>
           <li><a href="#">About Us</a></li>
           <li><a href="#">Contact</a></li>
-          <li><a href="#" class="active">Profile</a></li>
+          <li><a href="#">Profile</a></li>
         </ul>
       </nav>
     </div>
 
-    <!-- Floral Search Header -->
     <section class="floral-header">
       <div class="floral-content">
         <div class="floral-search">
@@ -38,39 +38,40 @@
   </header>
 
   <!-- Sidebar -->
-  <aside class="sidebar">
-    <div class="icon"><img src="bell.png" alt="Notifications"></div>
-    <div class="icon"><img src="Compass.png" alt="Explore"></div>
-    <div class="icon"><img src="Image.png" alt="Gallery"></div>
-    <div class="icon"><img src="Videos.png" alt="Videos"></div>
-    <div class="icon"><img src="paint-brush-icon.png" alt="Art"></div>
-    <div class="icon"><img src="Settings.png" alt="Settings"></div>
-  </aside>
+<aside class="sidebar">
+  <div class="icon"><img src="Compass.png" alt="Compass"></div>
+  <div class="icon"><img src="Image.png" alt="Gallery"></div>
+  <div class="icon"><img src="Videos.png" alt="Videos"></div>
+  <div class="icon"><img src="paint-brush-icon.png" alt="Art"></div>
+  <div class="icon"><img src="Home.png" alt="Home"></div>
+  <div class="icon"><img src="Settings.png" alt="Settings"></div>
+</aside>
 
-  <!-- Profile Section -->
-  <section class="profile-section">
+  <!-- Main Profile Content -->
+  <main class="profile-content">
     <div class="profile-card">
-      <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile" class="avatar">
-      <h2>Juana Dela Cruz</h2>
-      <p class="edit">Edit profile</p>
+      <i class="fas fa-bell notification"></i>
+    <div class="profile-img">
+  <img src="Raf.jpg" alt="Profile Picture">
+</div>
 
-      <div class="profile-tabs">
+
+      <h2>Juana Dela Cruz</h2>
+      <p>Edit profile</p>
+      <div class="profile-links">
         <span>My Posts</span>
         <span>Favorites</span>
         <span>Saves</span>
       </div>
-
-      <div class="add-btn">
-        +
-      </div>
+      <button class="add-post"><i class="fas fa-plus"></i></button>
     </div>
-  </section>
+  </main>
 
-  <!-- Footer -->
+ <!-- Footer Section -->
   <footer class="footer">
     <div class="footer-container">
-
-      <!-- About -->
+      
+      <!-- About Section -->
       <div class="footer-section about">
         <div class="logo-area">
           <img src="Artispo_logo.png" alt="Artispo Logo" class="footer-logo">
@@ -85,7 +86,7 @@
           and foster those into a creative power.</p>
       </div>
 
-      <!-- Contact -->
+      <!-- Contact Section -->
       <div class="footer-section contact">
         <h3>Contact Us</h3>
         <p><strong>Email:</strong> artispo@gmail.com</p>
@@ -129,12 +130,6 @@
 
     </div>
   </footer>
-
-  <script>
-    document.querySelector('.add-btn').addEventListener('click', () => {
-      alert('Add new post clicked!');
-    });
-  </script>
 
 </body>
 </html>
