@@ -49,7 +49,7 @@ header {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #F8E8D0;
+  background-color: #fff7ec;
   border: 10px solid #e86c0c;
   border-radius: 25px;
   height: 550px;
@@ -236,6 +236,41 @@ header {
   border-radius: 30px;
   object-fit: cover;
 }
+
+.password-container {
+  position: relative;
+}
+
+.forgot-password {
+  position: absolute;
+  right: 0;
+  top: 105%;
+  transform: translateY(-50%);
+  font-size: 0.85rem;
+  color: #666;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.no-account {
+  text-align: center;
+  font-weight: 500;
+  margin-top: 15px;
+}
+
+.no-account a {
+  color: #e86c0c;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.no-account a:hover {
+  text-decoration: underline;
+}
+
 
 /* ---------------- RESPONSIVENESS ---------------- */
 @media (max-width: 1024px) {
