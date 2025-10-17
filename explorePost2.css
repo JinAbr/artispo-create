@@ -1,0 +1,443 @@
+/* ---------- General Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Georgia", serif;
+}
+body {
+  background-color: #35363F;
+  display: flex;
+  flex-direction: column; /* stack children vertically */
+  min-height: 100vh; /* make body take full viewport height */
+}
+
+
+/* ---------- Top Navigation ---------- */
+.top-nav {
+  position: relative;
+  top: 0px; /* raised just a hair more */
+  left: 0;
+  width: 100%;
+  background-color: #f6e7d0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.8em 4em;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.nav-content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin-left: auto;
+  padding-left: 0; /* no extra space needed because logo is in normal flow */
+}
+
+
+.logo {
+  position: relative;
+  top: -100px;
+  left: -550px;
+  z-index: 2000;
+  margin: 0;
+  padding: 0;
+}
+
+.logo img {
+  width: 300px;
+  height: auto;
+  display: block;
+}
+
+
+
+.logo h1 {
+  font-size: 24px;
+  color: #1a1a1a;
+}
+
+.top-nav nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2em;
+  padding-top: 40px;
+}
+
+.top-nav nav ul li a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.top-nav nav ul li a.active,
+.top-nav nav ul li a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  position: absolute;  /* stays in layout */
+  top: 0;
+  left: 0;
+  width: 60px;
+  background-color: #e27b2d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 270px;  /* space above icons */
+  padding-bottom: 1000px; /* space below icons — increase as needed */
+  gap: 20px;
+  min-height: 100%;    /* grows with content */
+  z-index: 1;
+}
+
+
+
+
+.sidebar .icon img {
+  width: 35px;     /* adjust icon size */
+  height: 35px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.sidebar .icon img:hover {
+  transform: scale(1.1); /* small zoom on hover */
+}
+/* ---------- Main ---------- */
+.explore-main {
+  margin-left: 80px;
+  margin-top: 20px; 
+  padding: 20px;
+  color: #f5e9d3;
+  flex: 1; /* makes it grow to fill vertical space */
+}
+
+
+/* ---------- Back Button ---------- */
+.back-button {
+  color: #f5e9d3;
+  font-size: 16px;
+  margin-bottom: 1em;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* ---------- Artwork Section ---------- */
+.artwork-detail {
+  display: flex;
+  gap: 2em;
+  flex-wrap: nowrap; /* keep video and info side by side */
+  margin-bottom: 3em;
+  align-items: flex-start; /* top-align video and info */
+}
+
+.artwork-image {
+  flex: 1;
+  min-width: 300px;
+  max-width: 450px;
+  aspect-ratio: 4 / 3;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  background-color: #000; /* fallback if video doesn't load */
+}
+
+.artwork-image video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fills the box neatly */
+  border-radius: 12px;
+  display: block;
+}
+
+/* Save button only */
+.save-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  background-color: #4f7942;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Artwork info on the right */
+.artwork-info {
+  flex: 1; /* takes remaining horizontal space */
+  min-width: 250px; /* ensures it doesn't get too narrow */
+  color: #f5e9d3;
+  display: flex;
+  flex-direction: column; /* stack info vertically */
+  gap: 1em; /* spacing between items */
+}
+
+
+.uploader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1em;
+}
+
+/* profile image */
+.uploader img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.follow-btn {
+  margin-left: auto;
+  background-color: #e27b2d;
+  color: #fff;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.artwork-description {
+  line-height: 1.5;
+}
+
+/* ---------- Gallery ---------- */
+.more-title {
+  margin-bottom: 1em;
+  font-size: 20px;
+  color: #f5e9d3;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* slightly tighter spacing */
+}
+
+.gallery .item {
+  flex: 1;
+  min-width: 180px; /* was 250px — smaller but still visible */
+  max-width: 220px;
+}
+
+.gallery .item img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+
+.gallery .item img:hover {
+  transform: scale(1.03);
+}
+
+/* ---------- More Like This Section ---------- */
+.more-section {
+  background-color: #f5e9d3;
+  padding: 2em;
+  border-radius: 15px;
+  margin-top: 2em;
+  width: 100vw;
+  margin-left: calc(-1 * (100vw - 100%) / 2);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers everything horizontally */
+  justify-content: center;
+  text-align: center;
+}
+
+
+
+.more-section .more-title {
+  color: #1a1a1a; /* darker text for contrast */
+}
+
+.more-section .gallery .item img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.more-section .gallery .item img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* ---------- Search Bar ---------- */
+.floral-header {
+  width: 100%;
+  background: url("flowers-bg.png") center/cover no-repeat;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 60px; /* reduced from 120px */
+  margin-bottom: 0;
+}
+.floral-content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  background-image: url('flowers_cream_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.floral-search {
+  display: flex;
+  align-items: center;
+  background-color: #f5e9d3;
+  border-radius: 25px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  width: 500px;
+  max-width: 90%;
+  border: 3px solid #e27b2d;
+  margin: 15px 0;
+}
+
+.floral-search .search-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.floral-search input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 16px;
+  color: #333;
+  background-color: transparent;
+}
+.footer {
+  background-color: #35363F;
+  color: #fff;
+  padding: 40px 80px;
+  font-family: "Poppins", sans-serif;
+  width: 100%; /* ensure it spans full width */
+}
+
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-section h3 {
+  color: #ff6b00;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.about .logo-area {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+.footer-logo {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+  margin-top: 0; /* remove the huge margin */
+  display: block;
+}
+
+.tagline {
+  font-size: 0.9rem;
+  color: #f5e9d3;
+}
+
+.footer-section p {
+  color: #f5e9d3;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.footer .logo-area .logo {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+  margin-top: 170px; /* moves the logo down */
+  display: block;
+}
+
+
+.social-icons {
+  margin-top: 15px;
+}
+
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+  border-radius: 8px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section a {
+  text-decoration: none;
+  color: #f5e9d3;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: #ff6b00;
+}
+
+.sub-links {
+  margin-left: 20px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
