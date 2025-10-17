@@ -14,7 +14,7 @@ body {
 
 h1{
   font-family: "Sniglet", cursive;
-  font-weight: 400;
+  font-weight: 100;
   font-size: 46px;
   letter-spacing: 0.02em;
   color: #1B1B1B;
@@ -89,34 +89,42 @@ h1, h2, h3, p {
 
 .contact-title {
   font-family: 'Poly', serif;
+  font-weight: 100;
   font-size: 5rem;
   margin-bottom: 2rem;
 }
 
 .artispo-block {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 1rem;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 1.5rem;
+  position: relative;
 }
 
 .artispo-badge {
-  width: 60px;
+  width: 70px;
   height: auto;
+  margin-bottom: 0.2rem;
 }
 
 .artispo-text {
   font-family: 'Sniglet', cursive;
-  font-size: 2rem;
-  margin-right: 0.5rem;
+  font-size: 2.2rem;
+  color: #f6e5cc;
+  margin-top: -60px;
+  margin-left: 90px;
 }
 
 .artispo-tagline {
-  font-size: 0.9rem;
-  opacity: 0.8;
-  margin-top: 0.5rem;
-  margin-left: 0.3rem;
+  font-size: 0.95rem;
+  color: #f6e5cc;
+  opacity: 0.9;
+  margin-left: 90px;
+  margin-top: -5px;
 }
+
 
 .contact-lines {
   margin-top: 1rem;
@@ -125,17 +133,46 @@ h1, h2, h3, p {
 }
 
 .social-block {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 1rem 3rem;
+  margin-top: 2px;
 }
 
 .social-item {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
 }
+
+.social-item img {
+  width: 35px;
+  height: 35px;
+}
+
+.social-item div {
+  font-size: 1rem;
+  color: #f6e5cc;
+}
+
+@media (max-width: 768px) {
+  .social-block {
+    grid-template-columns: 1fr;
+  }
+ .artispo-text {
+    margin-top: -60px;
+    margin-left: 80px;
+  }
+
+  .artispo-tagline {
+    margin-left: 80px;
+  }
+}
+
+.footer-col-contact-col{
+  top: 10px;
+}
+
 
 .social-icons {
   display: flex;
@@ -174,7 +211,7 @@ h1, h2, h3, p {
 /* Decorative shapes */
 .contact-ellipse {
   position: absolute;
-  top: 10%;
+  top: 3.5%;
   right: -2%;
   background-color: #d45d0b;
   width: 110px;
@@ -185,10 +222,10 @@ h1, h2, h3, p {
 
 .contact-rect-top {
   position: absolute;
-  top: 12%;
+  top: 8%;
   right: -2px;
   background-color: #31522b;
-  width: 150px;
+  width: 250px;
   height: 12px;
   border-radius: 20px;
   z-index: 1;
@@ -196,10 +233,10 @@ h1, h2, h3, p {
 
 .contact-rect-bottom {
   position: absolute;
-  top: 16%;
+  top: 13%;
   right: -2px;
   background-color: #31522b;
-  width: 180px;
+  width: 215px;
   height: 12px;
   border-radius: 20px;
   z-index: 1;
