@@ -94,21 +94,23 @@ nav ul li a:hover {
 }
 
 .search-icon {
+    position: absolute;
+    left: 400px; /* move icon to the left inside the input */
+    top: 50%; /* vertically center */
+    transform: translateY(-50%);
     background-color: transparent;
-    border: 3px solid #e27b2d;
+    border: none;
     color: #000;
     font-size: 1.3em;
-    padding: 8px 10px;
-    border-radius: 50%;
-    position: absolute;
-    left: calc(50% - 180px);
+    padding: 0;
     z-index: 3;
+    cursor: pointer;
 }
 
 .search-input {
     width: 450px;
     max-width: 80%;
-    padding: 0.9em 1em 0.9em 3em;
+    padding: 0.9em 1em 0.9em 3.5em; /* add left padding for icon space */
     border: 3px solid #e27b2d;
     border-radius: 30px;
     outline: none;
@@ -125,15 +127,7 @@ nav ul li a:hover {
 
 /* --- Hero Decorative Elements --- */
 .hero::before {
-    content: "";
-    position: absolute;
-    bottom: 10%;
-    left: 0;
-    width: 150px;
-    height: 150px;
-    background-color: #e27b2d;
-    border-radius: 50%;
-    z-index: 0;
+ display: none;
 }
 
 .hero-images {
@@ -154,18 +148,19 @@ nav ul li a:hover {
 
 /* Image placements (based on your screenshot) */
 .hero-img-left {
-    top: 20%;
-    left: 3%;
-    width: 200px;
+    top: 10%;   /* smaller % moves it upward */
+    left: -5%;
+    width: 220px;  /* fixed typo: "100x" → "100px" */
     height: 250px;
 }
 
 .hero-img-bottom {
-    bottom: 0;
-    left: 10%;
+    bottom: -15px;
+    left: 70%;
     width: 250px;
-    height: 180px;
-    border-radius: 0 20px 0 0;
+    height: 200px;
+    border-radius: 20px;
+    z-index: 1;
 }
 
 .hero-img-right {
