@@ -27,18 +27,13 @@
 
     <!-- Sign-Up Box -->
     <div class="signup-box">
-      <h2>Sign Up</h2>
-      <form id="signupForm">
-        <input type="text" id="username" name="username" placeholder="Username" required>
-
-        <input type="email" id="email" name="email" placeholder="Email Address" required>
+      <h2>Log In</h2>
+      <form id="loginForm">
+        <input type="text" id="username" name="username" placeholder="Username or Email" required>
 
         <div class="password-container">
           <input type="password" id="password" name="password" placeholder="Password" minlength="8" required>
-          <p><i>Password must be at least 8 characters*</i></p>
         </div>
-
-        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-type password" minlength="8" required>
 
         <button type="submit" class="continue">Continue</button>
 
@@ -66,30 +61,27 @@
   </main>
 
   <script>
-    document.getElementById("signupForm").addEventListener("submit", function (e) {
-      const password = document.getElementById("password");
-      const confirmPassword = document.getElementById("confirmPassword");
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
 
-      // Let built-in validation handle empty or invalid inputs
-      if (!this.checkValidity()) return;
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
 
-      // Check if passwords match
-      if (password.value !== confirmPassword.value) {
-        e.preventDefault();
-        alert("⚠️ Passwords do not match. Please re-type your password.");
-        confirmPassword.focus();
+      if (!username || !password) {
+        alert("⚠️ Please fill in all fields.");
         return;
       }
 
-      alert("🎨 Account created successfully!");
-      console.log("User signed up successfully:", {
-        username: document.getElementById("username").value.trim(),
-        email: document.getElementById("email").value.trim(),
-      });
+      if (password.length < 8) {
+        alert("⚠️ Password must be at least 8 characters.");
+        return;
+      }
 
-      this.reset();
+      alert("🎨 Logged in successfully!");
+      document.getElementById("loginForm").reset();
     });
   </script>
+
 
 </body>
 </html>
