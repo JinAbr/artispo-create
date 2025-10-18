@@ -346,6 +346,8 @@ h1, h2, h3, p {
   margin-right: 10px;
 }
 
+
+
 /* =============== RESPONSIVENESS =============== */
 @media (max-width: 1024px) {
   .footer-divider {

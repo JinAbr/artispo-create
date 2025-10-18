@@ -8,20 +8,30 @@
 </head>
 <body>
 
-  <!-- Top Navigation -->
+    <!-- Top Navigation -->
   <header class="top-nav">
     <div class="nav-content">
       <div class="logo">
         <img src="Artispo Logo(1).png" alt="Artispo Logo">
-
       </div>
-      <nav>
-        <nav class="main-nav">
+
+      <nav class="main-nav">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="explore.html" class="active">Explore</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Contact</a></li>
+
+          <!-- Dropdown for Explore -->
+          <li class="dropdown">
+            <a href="explore.html" class="active">Explore</a>
+            <ul class="dropdown-menu">
+              <li><a href="explore.html">Mix Mode</a></li>
+              <li><a href="exploreImages.html">Images</a></li>
+              <li><a href="exploreVideos.html">Videos</a></li>
+              <li><a href="exploreMaterials.html">Materials</a></li>
+            </ul>
+          </li>
+
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
           <li><a href="Profile.html">Profile</a></li>
         </ul>
       </nav>
@@ -85,7 +95,7 @@
       <!-- Example Image Box -->
 <a href="explorePost.html" class="item-link">
   <div class="item image-item small">
-    <div class="item-icon"><img src="Image.png" alt="Image Icon"></div>
+    <div class="item-icon"><img src="Gallery.png" alt="Image Icon"></div>
     <div class="media-container">
       <img src="https://www.shutterstock.com/image-illustration/realistic-over-abstract-cat-pet-600nw-2440374701.jpg" alt="Image Example">
     </div>
