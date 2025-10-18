@@ -34,13 +34,14 @@ header {
     height: 80px;
 }
 
-.logo h1, .hero h1 {
+.logo h1 {
     font-family: "Sniglet", cursive;
     font-weight: 400;
     font-size: 46px;
     letter-spacing: 0.02em;
     color: #1B1B1B;
 }
+
 
 .hero p {
     font-family: "Poly", sans-serif;
@@ -73,9 +74,9 @@ nav ul li a:hover {
 
 .hero h1 {
     font-family: "Sniglet", cursive;
-    font-size: 4em;
-    font-weight: 800;
-    margin-bottom: 0.2em;
+    font-size: 5em;
+    font-weight: 400;
+    margin-bottom: 0.1em;
     color: #1B1B1B;
 }
 
@@ -301,6 +302,63 @@ nav ul li a:hover {
 
 .small-img-box:last-of-type {
   left: 80px;
+}
+
+.category a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.category:hover a {
+    transform: scale(1.05);
+}
+
+/* Image hover effect */
+.category img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.category:hover img {
+    transform: scale(1.08);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Text hover colors */
+.category h3,
+.category p {
+    transition: color 0.3s ease;
+}
+
+.category:hover h3 {
+    color: #e27b2d; /* adjust this highlight to match your theme */
+}
+
+.category:hover p {
+    color: #e27b2d;
+}
+
+/* --- Mix Mode button --- */
+.mix-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 28px;
+    background-color: #e27b2d; /* match hover color */
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.mix-btn:hover {
+    background-color: #e27b2d;
+    transform: scale(1.05);
 }
 
 /* ===================== MIDDLE BANNER ===================== */
