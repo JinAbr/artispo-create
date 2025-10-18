@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artispo | Sign Up</title>
+  <title>Artispo | Log In</title>
   <link rel="stylesheet" href="login.css">
 </head>
 <body>
@@ -25,7 +25,7 @@
       <img src="flowers_black_bg.jpg" class="img3" alt="Floral Art">
     </div>
 
-    <!-- Sign-Up Box -->
+    <!-- Log-In Box -->
     <div class="login-box">
       <h2>Log In</h2>
       <form id="loginForm">
@@ -36,9 +36,7 @@
           <a href="#" class="forgot-password">Forgot Password?</a>
         </div>
 
-        <a href="home.html">
-          <button type="submit" class="continue"><b>Continue</b></button>
-        </a>
+        <button type="submit" class="continue"><b>Continue</b></button>
 
         <p class="no-account">
           <b>Don’t have an account yet?</b>
@@ -79,10 +77,10 @@
       }
 
       alert("🎨 Logged in successfully!");
-      document.getElementById("loginForm").reset();
+      // Redirect to home.html after validation
+      window.location.href = "home.html";
     });
   </script>
-
 
 </body>
 </html>
